@@ -77,6 +77,12 @@ app.get("/cryptos", async (req, res) => {
   }
 });
 
+// New route to keep the server active
+app.get("/ping", (req, res) => {
+  console.log('Ping received');
+  res.status(200).json({ message: 'Server is active' });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
